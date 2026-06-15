@@ -1,0 +1,179 @@
+/* Limpio los márgenes por defecto para que no me queden espacios raros */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para que el padding no me deforme los anchos */
+}
+
+body {
+    /* Dejo el fondo fijo en las tres páginas como se pide */
+    background-image: url('img/fondo.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    
+    /* Fuente clásica para el texto general para que sea legible */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* El contenedor principal con el ancho máximo y centrado */
+.contenedor-principal {
+    max-width: 1000px; 
+    width: 90%;        /* Para que se adapte bien si se achica la pantalla */
+    margin: 2rem auto; /* Centrado automático arriba y abajo */
+    padding: 2.5rem;   
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro transparente para que se lea el texto */
+    border-radius: 8px; 
+}
+
+/* Uso la tipografía de Google Fonts solo para los títulos */
+h1, h2, h3 {
+    font-family: 'Glegoo', serif; 
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    color: #cccccc;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Línea sutil decorativa abajo */
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    color: #00ffcc; /* Color destacado para los nombres de las obras */
+}
+
+/* Espaciado de los párrafos para que no quede todo pegado */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem; 
+    text-align: justify;   
+}
+
+/* Menú de navegación horizontal usando flexbox */
+nav {
+    margin-bottom: 3.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;             /* Pone los elementos uno al lado del otro */
+    justify-content: center;   /* Centra todo el menú */
+    gap: 2rem;                 /* Separación entre los botones */
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Estados de los enlaces de navegación */
+
+/* Link normal sin visitar */
+nav ul li a:link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+/* Link visitado: le mantengo el color para que no se ponga violeta */
+nav ul li a:visited {
+    color: #ffffff;
+}
+
+/* Efecto al pasar el mouse por encima */
+nav ul li a:hover {
+    color: #00ffcc;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Cuando se hace click en el enlace */
+nav ul li a:active {
+    color: #00b38f;
+}
+
+/* Estilo para saber en qué página está parado el usuario */
+nav ul li a.activo {
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+}
+
+/* Estilos para que las imágenes y el video de YouTube sean adaptables */
+img, iframe {
+    display: block;
+    max-width: 100%; /* No deja que se pasen del ancho del contenedor */
+    height: auto;
+    margin: 2.5rem auto; /* Centrado automático con espacio arriba y abajo */
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); 
+}
+
+/* Configuración para que el video mantenga la proporción 16:9 */
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    border: none;
+}
+
+/* Bloque de cita destacada en el inicio */
+blockquote {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-left: 4px solid #00ffcc; /* Borde de color a la izquierda */
+    padding: 1.5rem;
+    margin: 3rem 0;
+    font-style: italic;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.7rem;
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    text-align: right;
+}
+
+/* Estilos del pie de página */
+footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    font-size: 0.95rem;
+    color: #888888;
+}
+
+/* Estados del enlace del correo en el footer */
+footer a:link, footer a:visited {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover, footer a:active {
+    color: #ffffff;
+    text-decoration: underline; 
+}
